@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Eloquent\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -38,7 +37,7 @@ class AdminController extends Controller
         }
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
+        $user = User::query()->create($input);
         $response['token'] = $user->createToken('MyApp')->accessToken;
         $response['user'] = $user;
         return response()->json($response, $this->successStatus);

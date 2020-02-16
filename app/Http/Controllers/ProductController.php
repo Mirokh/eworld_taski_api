@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Gallery;
-use App\Product;
-use Illuminate\Http\Request;
+use App\Eloquent\Category;
+use App\Eloquent\Gallery;
+use App\Eloquent\Product;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 

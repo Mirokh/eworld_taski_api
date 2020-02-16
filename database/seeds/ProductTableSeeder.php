@@ -1,8 +1,8 @@
 <?php
 
-use App\Category;
-use App\Gallery;
-use App\Product;
+use App\Eloquent\Category;
+use App\Eloquent\Gallery;
+use App\Eloquent\Product;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 

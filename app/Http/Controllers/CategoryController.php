@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Gallery;
-use Illuminate\Http\Request;
+use App\Eloquent\Category;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
@@ -50,7 +48,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        $category = Category::find($category->id);
+        $category = Category::query()->find($category->id);
 
         return response()->json(['message' => 'Category updated', 'category' => $category], 200);
     }

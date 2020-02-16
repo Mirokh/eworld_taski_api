@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,11 +11,11 @@ class Product extends Model
 
     public function gallery()
     {
-        return $this->morphMany('App\Gallery', 'model', 'model')->where('is_main', 0);
+        return $this->morphMany('App\Eloquent\Gallery', 'model', 'model')->where('is_main', 0);
     }
 
     public function categories()
     {
-        return $this->belongsToMany('App\Category');
+        return $this->belongsToMany('App\Eloquent\Category');
     }
 }
